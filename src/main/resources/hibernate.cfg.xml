@@ -4,17 +4,16 @@
     <session-factory>
         <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/smis</property>
-        <property name="hibernate.connection.username">valens</property>
-        <property name="hibernate.connection.password">valens2003</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/school</property>
+        <property name="hibernate.connection.username">bruno</property>
+        <property name="hibernate.connection.password">Bruno@1980</property>
 
-        <property name="hibernate.session_factory_name">SmisSessionFactory</property>
+        <property name="hibernate.session_factory_name">SchoolSessionFactory</property>
         <property name="hibernate.connection.pool_size">1</property>
-        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+       <property name="cache.provider_class">org.hibernate.cache.NoCacheRegionFactoryAvailableException</property>  <!--  hibernate.cache.NoCacheProvider-->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="hibernate.default_schema">smis</property>
+<!--        <property name="hibernate.default_schema">school</property>-->
         <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
-        ​
         <property name="current_session_context_class">thread</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
@@ -29,12 +28,9 @@
         <property name="hibernate.c3p0.timeout">1800</property>
 
         <!-- Models -->
-        <mapping class="org.rca.smis.orm.Address" />
-        <mapping class="org.rca.smis.orm.Enrollment" />
-        <mapping class="org.rca.smis.orm.Course" />
-        <mapping class="org.rca.smis.orm.Mack" />
-        <mapping class="org.rca.smis.orm.Instructor" />
-        <mapping class="org.rca.smis.orm.Student" />
-        <mapping class="org.rca.smis.orm.classRoom" />
+        <mapping class="rw.ac.rca.smis.orm.Address" />
+        <mapping class="rw.ac.rca.smis.orm.Course" />
+        <mapping class="rw.ac.rca.smis.orm.Instructor" />
+        <mapping class="rw.ac.rca.smis.orm.Student" />
     </session-factory>
 </hibernate-configuration>

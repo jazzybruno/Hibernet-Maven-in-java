@@ -1,34 +1,33 @@
-package rw.ac.rca.smis;
+package rw.ac.rca.smis.orm;
 
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "Address")
+@Table(name = "address")
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int address_id;
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Address")
+    private String street;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "address")
     private Set<Student> students;
 
     //mapped by means the Address class will be foreign key in that table.
     //cascade type all means once one deleted we loose another one too
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Address")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "address")
     private Set<Instructor> instructors;
     public  Address(){}
-    public Address(int id, String name) {
-        this.address_id = id;
+    public Address(String name , String street) {
         this.name = name;
+        this.street = street;
     }
     public int getId() {
         return address_id;
-    }
-    public void setStudent(Set<Student> students) {
-        this.students = students;
     }
 
     public void setId(int id) {
@@ -47,5 +46,11 @@ public class Address {
     }
 
 
+    public String getStreet() {
+        return street;
+    }
 
+    public void setStreet(String street) {
+        this.street = street;
+    }
 }

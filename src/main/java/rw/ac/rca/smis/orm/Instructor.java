@@ -1,4 +1,4 @@
-package rw.ac.rca.smis;
+package rw.ac.rca.smis.orm;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -6,7 +6,7 @@ import java.util.List;
 
 
 @Entity
-@Table(name = "Instructor")
+@Table(name = "instructor")
 public class Instructor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,14 +17,16 @@ public class Instructor {
     @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
-    private List<Course> courses;
+//    private List<Course> courses;
     public int getId() {
         return id;
     }
 
     public Instructor(){}
-    public Instructor(int id) {
-        this.id = id;
+    public Instructor(String name , Date dob , char gender) {
+       this.name = name;
+       this.dob = dob;
+       this.gender = gender;
     }
 
     public String getName() {
@@ -51,9 +53,9 @@ public class Instructor {
         this.address = address;
     }
 
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
-    }
+//    public void setCourses(List<Course> courses) {
+//        this.courses = courses;
+//    }
 
     public Date getDob() {
         return dob;
@@ -67,8 +69,8 @@ public class Instructor {
         return address;
     }
 
-    public List<Course> getCourses() {
-        return courses;
-    }
+//    public List<Course> getCourses() {
+//        return courses;
+//    }
 
 }
