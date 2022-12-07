@@ -17,21 +17,41 @@ public class MainApp {
      @SuppressWarnings(value = "unchecked")
      Address address1 = new Address("Nyabihu" , "KN4 St13");
      Address address2 = new Address("Kigali" , "KG3 St18");
-     Student student1 = new Student("Jazzy Bruno" );
-     Student student2 = new Student("Hello There");
+     Student student1 = new Student();
+     Student student2 = new Student();
      Course course1 = new Course("Biology" , 12 , 120);
      Course course2 = new Course("Chemistry" , 10 , 100);
-     Instructor instructor1 = new Instructor("Professor2" , new Date(2000 , 12 , 23) , 'M');
-     Instructor instructor2 = new Instructor("Professor5" , new Date(1995 , 2 , 12) , 'F');
+     Instructor instructor1 = new Instructor();
+     Instructor instructor2 = new Instructor();
 
+     //the first instructor
      instructor1.setAddress(address1);
-     instructor2.setAddress(address1);
+     instructor1.setDob(new Date(1980 , 06 , 16));
+     instructor1.setPhoneNumber("0788671071");
+     instructor1.setGender('M');
+     instructor1.setName("Jazzy Bruno");
 
+     //the second instructor
+     instructor1.setAddress(address2);
+     instructor1.setDob(new Date(1950 , 05 , 16));
+     instructor1.setPhoneNumber("0788099764");
+     instructor1.setGender('F');
+     instructor1.setName("Joice Mary");
+
+     //the first student
      student1.setAddress(address1);
-     student2.setAddress(address2);
+     student1.setDob(new Date(2005 , 05 , 16));
+     student1.setName("Ganza Vivens");
+     student1.setPhoneNumber("0798980764");
+
+     //the second students
+     student1.setAddress(address2);
+     student1.setDob(new Date(2007 , 05 , 16));
+     student1.setName("Gwiza Rolande");
+     student1.setPhoneNumber("0798985664");
 
      course1.setStudent(student1);
-     course1.setStudent(student1);
+     course1.setStudent(student2);
 
      course1.setInstructor(instructor1);
      course2.setInstructor(instructor1);

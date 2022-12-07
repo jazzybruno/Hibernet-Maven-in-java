@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 public class Course {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     @ManyToOne
@@ -19,6 +19,10 @@ public class Course {
     private Instructor instructor;
     private int period;
     private double maxMark;
+
+    public Course() {
+
+    }
 
     public Student getStudent() {
         return student;

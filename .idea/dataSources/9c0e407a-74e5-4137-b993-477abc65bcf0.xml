@@ -1203,43 +1203,214 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
     <user id="334" parent="1" name="pma">
       <Host>localhost</Host>
     </user>
-    <table id="335" parent="324" name="class_room">
+    <table id="335" parent="324" name="address">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="336" parent="324" name="emp500">
+    <table id="336" parent="324" name="class_room">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <column id="337" parent="335" name="id">
+    <table id="337" parent="324" name="course">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="338" parent="324" name="emp500">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="339" parent="324" name="instructor">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="340" parent="324" name="student">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <column id="341" parent="335" name="address_id">
+      <AutoIncrement>3</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="338" parent="335" name="name">
+    <column id="342" parent="335" name="name">
       <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="339" parent="335" name="studentsSize">
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
+    <column id="343" parent="335" name="street">
+      <DataType>varchar(255)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="340" parent="336" name="id">
+    <index id="344" parent="335" name="PRIMARY">
+      <ColNames>address_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="345" parent="335" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="346" parent="336" name="id">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="341" parent="336" name="firstName">
+    <column id="347" parent="336" name="name">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="342" parent="336" name="lastName">
+    <column id="348" parent="336" name="studentsSize">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="349" parent="337" name="id">
+      <AutoIncrement>3</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="350" parent="337" name="maxMark">
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="351" parent="337" name="name">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="352" parent="337" name="period">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="353" parent="337" name="instructor_id">
+      <DataType>int(11)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="354" parent="337" name="student_id">
+      <DataType>int(11)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <foreign-key id="355" parent="337" name="FK_l3hxua7nmf9sny33t38ndetig">
+      <ColNames>instructor_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>instructor</RefTableName>
+    </foreign-key>
+    <foreign-key id="356" parent="337" name="FK_9j4onoqov6w6lkrkf0djoyq84">
+      <ColNames>student_id</ColNames>
+      <RefColNames>student_id</RefColNames>
+      <RefTableName>student</RefTableName>
+    </foreign-key>
+    <index id="357" parent="337" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="358" parent="337" name="FK_l3hxua7nmf9sny33t38ndetig">
+      <ColNames>instructor_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="359" parent="337" name="FK_9j4onoqov6w6lkrkf0djoyq84">
+      <ColNames>student_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="360" parent="337" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="361" parent="338" name="id">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="362" parent="338" name="firstName">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="363" parent="338" name="lastName">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
+    <column id="364" parent="339" name="id">
+      <AutoIncrement>3</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="365" parent="339" name="dob">
+      <DataType>datetime|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="366" parent="339" name="gender">
+      <DataType>char(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="367" parent="339" name="name">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="368" parent="339" name="address_id">
+      <DataType>int(11)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="369" parent="339" name="FK_rt8tuawe7qvyn5q5qoaeeitak">
+      <ColNames>address_id</ColNames>
+      <RefColNames>address_id</RefColNames>
+      <RefTableName>address</RefTableName>
+    </foreign-key>
+    <index id="370" parent="339" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="371" parent="339" name="FK_rt8tuawe7qvyn5q5qoaeeitak">
+      <ColNames>address_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="372" parent="339" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="373" parent="340" name="student_id">
+      <AutoIncrement>3</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="374" parent="340" name="studentName">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="375" parent="340" name="address_id">
+      <DataType>int(11)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <foreign-key id="376" parent="340" name="FK_e3500f0n5n132n60x2ay1woj9">
+      <ColNames>address_id</ColNames>
+      <RefColNames>address_id</RefColNames>
+      <RefTableName>address</RefTableName>
+    </foreign-key>
+    <index id="377" parent="340" name="PRIMARY">
+      <ColNames>student_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="378" parent="340" name="FK_e3500f0n5n132n60x2ay1woj9">
+      <ColNames>address_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="379" parent="340" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
   </database-model>
 </dataSource>

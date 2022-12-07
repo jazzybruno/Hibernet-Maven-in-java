@@ -7,43 +7,17 @@ import java.util.List;
 
 @Entity
 @Table(name = "instructor")
-public class Instructor {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String name;
-    private Date dob;
+public class Instructor extends Person {
     private char gender;
     @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
-//    private List<Course> courses;
-    public int getId() {
-        return id;
-    }
+
+    @OneToMany( cascade = CascadeType.ALL , mappedBy = "instructor")
+    private List<Course> courses;
 
     public Instructor(){}
-    public Instructor(String name , Date dob , char gender) {
-       this.name = name;
-       this.dob = dob;
-       this.gender = gender;
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDob(Date dob) {
-        this.dob = dob;
-    }
 
     public void setGender(char gender) {
         this.gender = gender;
@@ -57,9 +31,6 @@ public class Instructor {
 //        this.courses = courses;
 //    }
 
-    public Date getDob() {
-        return dob;
-    }
 
     public char getGender() {
         return gender;
