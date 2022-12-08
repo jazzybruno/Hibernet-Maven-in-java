@@ -32,11 +32,11 @@ public class MainApp {
      instructor1.setName("Jazzy Bruno");
 
      //the second instructor
-     instructor1.setAddress(address2);
-     instructor1.setDob(new Date(1950 , 05 , 16));
-     instructor1.setPhoneNumber("0788099764");
-     instructor1.setGender('F');
-     instructor1.setName("Joice Mary");
+     instructor2.setAddress(address2);
+     instructor2.setDob(new Date(1950 , 05 , 16));
+     instructor2.setPhoneNumber("0788099764");
+     instructor2.setGender('F');
+     instructor2.setName("Joice Mary");
 
      //the first student
      student1.setAddress(address1);
@@ -45,10 +45,10 @@ public class MainApp {
      student1.setPhoneNumber("0798980764");
 
      //the second students
-     student1.setAddress(address2);
-     student1.setDob(new Date(2007 , 05 , 16));
-     student1.setName("Gwiza Rolande");
-     student1.setPhoneNumber("0798985664");
+     student2.setAddress(address2);
+     student2.setDob(new Date(2007 , 05 , 16));
+     student2.setName("Gwiza Rolande");
+     student2.setPhoneNumber("0798985664");
 
      course1.setStudent(student1);
      course1.setStudent(student2);
