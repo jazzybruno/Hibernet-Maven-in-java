@@ -3,11 +3,9 @@ package rw.ac.rca.smis.orm;
 import javax.persistence.*;
 import java.util.List;
 
-
 @Entity
 @Table(name = "student")
 public class Student extends Person {
-
 
     @ManyToOne
     @JoinColumn(name = "address_id")
@@ -17,8 +15,6 @@ public class Student extends Person {
     private List<Course> courses;
 
     public  Student(){}
-
-
 
 
     public void setAddress(Address address) {
@@ -33,14 +29,9 @@ public class Student extends Person {
         return address;
     }
 
-
-
     public List<Course> getCourses() {
         return courses;
     }
-
-
-
 
 
 }

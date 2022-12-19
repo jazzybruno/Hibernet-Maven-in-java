@@ -4,7 +4,7 @@
     <session-factory>
         <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/school</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/rwanda</property>
         <property name="hibernate.connection.username">bruno</property>
         <property name="hibernate.connection.password">Bruno@1980</property>
 
@@ -32,5 +32,14 @@
         <mapping class="rw.ac.rca.smis.orm.Course" />
         <mapping class="rw.ac.rca.smis.orm.Instructor" />
         <mapping class="rw.ac.rca.smis.orm.Student" />
+        <mapping class="rw.ac.rca.smis.orm.ClassRoom"></mapping>
+
+<!--        the mappings of the admin_entities of rwanda paractise-->
+        <mapping class="rw.ac.rca.smis.admin_entities.Village"></mapping>
+        <mapping class="rw.ac.rca.smis.admin_entities.Cell"></mapping>
+        <mapping class="rw.ac.rca.smis.admin_entities.Sector"></mapping>
+        <mapping class="rw.ac.rca.smis.admin_entities.District"></mapping>
+        <mapping class="rw.ac.rca.smis.admin_entities.Province"></mapping>
+
     </session-factory>
 </hibernate-configuration>
